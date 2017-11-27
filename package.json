@@ -1,0 +1,21 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "dev": "nodemon main.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "express": "^4.16.2",
+    "nodemon": "^1.12.1"
+  },
+  "dependencies": {
+    "@types/express": "^4.0.37",
+    "bmp280-sensor": "^0.1.1",
+    "node-bmp280": "^0.1.2"
+  }
+}
