@@ -2,8 +2,9 @@
 
 ## To Get Up And Running...
 
-npm install
-npm run dev
+npm install  
+npm run dev  
+go to http://[raspberry pi address]:8080/sensor
 
 ## Project Notes:
 
