@@ -1,5 +1,10 @@
 # Weather Balloon Project
 
+## To Get Up And Running...
+
+npm install
+npm run dev
+
 ## Project Notes:
 
 Single Program
