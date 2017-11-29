@@ -14,7 +14,7 @@ var RandomUtilities_1 = require("../utils/RandomUtilities");
 var ExternalTemperatureService = /** @class */ (function (_super) {
     __extends(ExternalTemperatureService, _super);
     function ExternalTemperatureService() {
-        var _this = _super.call(this) || this;
+        var _this = _super.call(this, 20000) || this;
         _this.MaxTemperature = -10000;
         _this.CurrentTemperature = 0;
         _this.MinTemperature = 10000;

@@ -1,6 +1,7 @@
 import express = require("express");
 import fs = require("fs");
 import ExternalTemperatureService = require("./services/ExternalTemperatureService");
+import CameraService = require("./services/CameraService");
 import AltimeterService = require("./services/AltimeterService");
 
 class Main{
@@ -8,6 +9,7 @@ class Main{
     public start = () =>{
 
         ExternalTemperatureService.start();
+        CameraService.start();
         AltimeterService.start();
 
         var port = 8080;

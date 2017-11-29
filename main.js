@@ -2,11 +2,13 @@
 exports.__esModule = true;
 var express = require("express");
 var ExternalTemperatureService = require("./services/ExternalTemperatureService");
+var CameraService = require("./services/CameraService");
 var AltimeterService = require("./services/AltimeterService");
 var Main = /** @class */ (function () {
     function Main() {
         this.start = function () {
             ExternalTemperatureService.start();
+            CameraService.start();
             AltimeterService.start();
             var port = 8080;
             var app = express();

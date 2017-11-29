@@ -12,7 +12,7 @@ class AltimeterService extends BaseService {
     public CurrentPressure: number = 0;
     
     constructor(){
-        super();
+        super(20000);
 
         this.bmp280 = new BMP280({
             i2cBusNumber  : 1,    // defaults to 1

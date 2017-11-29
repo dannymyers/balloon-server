@@ -14,7 +14,7 @@ var BMP280 = require("bmp280-sensor");
 var AltimeterService = /** @class */ (function (_super) {
     __extends(AltimeterService, _super);
     function AltimeterService() {
-        var _this = _super.call(this) || this;
+        var _this = _super.call(this, 20000) || this;
         _this.MaxTemperature = -10000;
         _this.MinTemperature = 10000;
         _this.CurrentTemperature = 0;

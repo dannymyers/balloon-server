@@ -8,7 +8,7 @@ class ExternalTemperatureService extends BaseService {
     public MinTemperature: number = 10000;
     
     constructor(){
-        super();
+        super(20000);
     }
 
     protected run = () =>{

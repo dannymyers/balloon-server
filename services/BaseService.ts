@@ -6,9 +6,13 @@ interface IService{
 export default class BaseService implements IService {
 
     private intervalHandle: NodeJS.Timer;
+    private interval: number;
+    constructor(interval: number){
+        this.interval = interval;
+    }
 
     start = () => {
-        this.intervalHandle = setInterval(this.run, 1000);
+        this.intervalHandle = setInterval(this.run, this.interval);
     }
 
     stop = () => {
