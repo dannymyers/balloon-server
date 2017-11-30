@@ -3,6 +3,7 @@ import fs = require("fs");
 import ExternalTemperatureService = require("./services/ExternalTemperatureService");
 import CameraService = require("./services/CameraService");
 import AltimeterService = require("./services/AltimeterService");
+import serveIndex = require('serve-index');
 
 class Main{
 
@@ -19,7 +20,11 @@ class Main{
             console.log('We are live on ' + port);
         });
         
-        app.use(express.static('public'))
+        
+        app.use('/camera', serveIndex(__dirname + '/camera'));
+        app.use('/camera', express.static('camera'));
+        
+        app.use(express.static('public'));
         
         app.get('/sensor', (req, res) => {
             var x = {
