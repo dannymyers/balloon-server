@@ -40,7 +40,7 @@ class AltimeterService extends BaseService {
             if(this.CurrentPressure > this.MaxPressure)this.MaxPressure = this.CurrentPressure;
             if(this.CurrentPressure < this.MinPressure)this.MinPressure = this.CurrentPressure;
 
-            this.CurrentTemperature = data.Temperature;
+            this.CurrentTemperature = data.Temperature * 1.8 + 32;
             if(this.CurrentTemperature > this.MaxTemperature)this.MaxTemperature = this.CurrentTemperature;
             if(this.CurrentTemperature < this.MinTemperature)this.MinTemperature = this.CurrentTemperature;
       })
