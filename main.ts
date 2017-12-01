@@ -2,6 +2,7 @@ import fs = require("fs");
 import ExternalTemperatureService = require("./services/ExternalTemperatureService");
 import CameraService = require("./services/CameraService");
 import AltimeterService = require("./services/AltimeterService");
+import GyroService = require("./services/GyroService");
 import serveIndex = require('serve-index');
 import * as express from "express";
 import * as http from "http";
@@ -63,6 +64,7 @@ class Main {
         
         this.app.get('/sensor', (req: any, res: any) => {
             var x = {
+                gyroData: GyroService.CurrentReading,
                 currentPressure: AltimeterService.CurrentPressure,
                 minPressure: AltimeterService.MinPressure,
                 maxPressure: AltimeterService.MaxPressure,
@@ -84,11 +86,13 @@ class Main {
     public start = () =>{
 
         ExternalTemperatureService.start();
-        CameraService.start();
+        GyroService.start();
+        //CameraService.start();
         AltimeterService.start();
 
         setInterval(()=>{
             this.io.emit("update-telemetry", {
+                gyroData: GyroService.CurrentReading,
                 currentPressure: AltimeterService.CurrentPressure,
                 minPressure: AltimeterService.MinPressure,
                 maxPressure: AltimeterService.MaxPressure,
@@ -97,7 +101,7 @@ class Main {
                 maxInternalTemperature: AltimeterService.MaxTemperature,
                 currentExternalTemperature: ExternalTemperatureService.CurrentTemperature,
                 minExternalTemperature: ExternalTemperatureService.MinTemperature,
-                maxExternalTemperature: ExternalTemperatureService.MaxTemperature,
+                maxExternalTemperature: ExternalTemperatureService.MaxTemperature,                
                 time: new Date()
             });
         }, 1000);                        
