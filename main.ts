@@ -104,7 +104,7 @@ class Main {
                 maxExternalTemperature: ExternalTemperatureService.MaxTemperature,                
                 time: new Date()
             });
-        }, 1000);                        
+        }, 100);                        
     }
 
     public stop = () => {

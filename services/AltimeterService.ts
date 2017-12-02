@@ -1,5 +1,6 @@
 import BaseService from "./BaseService";
 import BMP280 = require("bmp280-sensor");
+import roundTo = require('round-to');
 
 class AltimeterService extends BaseService {
     
@@ -36,11 +37,11 @@ class AltimeterService extends BaseService {
             //console.log(`Temperture:\t${data.Temperature}`);
             //console.log(`Pressure:\t${data.Pressure}`);
             console.log(data);
-            this.CurrentPressure = data.Pressure;
+            this.CurrentPressure = roundTo(data.Pressure, 3);
             if(this.CurrentPressure > this.MaxPressure)this.MaxPressure = this.CurrentPressure;
             if(this.CurrentPressure < this.MinPressure)this.MinPressure = this.CurrentPressure;
 
-            this.CurrentTemperature = data.Temperature * 1.8 + 32;
+            this.CurrentTemperature = roundTo(data.Temperature * 1.8 + 32, 3);
             if(this.CurrentTemperature > this.MaxTemperature)this.MaxTemperature = this.CurrentTemperature;
             if(this.CurrentTemperature < this.MinTemperature)this.MinTemperature = this.CurrentTemperature;
       })

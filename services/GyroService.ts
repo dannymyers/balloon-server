@@ -8,7 +8,7 @@ class GyroService extends BaseService {
     public CurrentReading: IMpuReading;
     
     constructor(){
-        super(1000);
+        super(50);
 
         var address = 0x68;
         var i2c1 = i2c.openSync(1);
