@@ -3,6 +3,7 @@ import ExternalTemperatureService = require("./services/ExternalTemperatureServi
 import CameraService = require("./services/CameraService");
 import AltimeterService = require("./services/AltimeterService");
 import GyroService = require("./services/GyroService");
+import GpsService = require("./services/GpsService");
 import serveIndex = require('serve-index');
 import * as express from "express";
 import * as http from "http";
@@ -74,6 +75,7 @@ class Main {
                 currentExternalTemperature: ExternalTemperatureService.CurrentTemperature,
                 minExternalTemperature: ExternalTemperatureService.MinTemperature,
                 maxExternalTemperature: ExternalTemperatureService.MaxTemperature,
+                gpsMessage: GpsService.LatestMessage,
                 time: new Date()
             };
             console.log(x);
@@ -87,6 +89,7 @@ class Main {
 
         ExternalTemperatureService.start();
         GyroService.start();
+        GpsService.start();
         //CameraService.start();
         AltimeterService.start();
 
@@ -102,6 +105,7 @@ class Main {
                 currentExternalTemperature: ExternalTemperatureService.CurrentTemperature,
                 minExternalTemperature: ExternalTemperatureService.MinTemperature,
                 maxExternalTemperature: ExternalTemperatureService.MaxTemperature,                
+                gpsMessage: GpsService.LatestMessage,
                 time: new Date()
             });
         }, 100);                        

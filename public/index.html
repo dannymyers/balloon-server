@@ -64,6 +64,21 @@
 
             </div>
 
+
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="well">
+                        <div style="font-size: 15pt">GPS Data</div>
+                        <div style="font-size: 10pt">Fix Status: {{sensor.gpsMessage.fixStatus == "1" ? "Locked" : "Not Locked"}}</div>
+                        <div style="font-size: 10pt">Latitude: {{sensor.gpsMessage.latitude}}</div>
+                        <div style="font-size: 10pt">Longitude: {{sensor.gpsMessage.longitude}}</div>
+                        <div style="font-size: 10pt">Altitude: {{sensor.gpsMessage.mslAltitude}}</div>
+                        <div style="font-size: 10pt">Satellites Used: {{sensor.gpsMessage.gnssSatellitesUsed}} of {{sensor.gpsMessage.gnssSatellitesInView}}</div>
+                        <div class="text-muted">{{sensor.gpsMessage.dateAndTimeUtc}}</div>
+                    </div>
+                </div>
+            </div>
+
             <div class="row">
                         <div class="col-lg-4">
                             <div class="well">

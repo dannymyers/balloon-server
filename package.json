@@ -21,6 +21,7 @@
     "i2c-mpu6050": "^2.2.1",
     "node-bmp280": "^0.1.2",
     "pi-camera": "^1.0.1",
+    "raspi-serial": "^4.0.0",
     "round-to": "^2.0.0",
     "serve-index": "^1.9.1",
     "socket.io": "^2.0.4",
